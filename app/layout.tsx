@@ -13,7 +13,11 @@ const ibmPlexSerif = IBM_Plex_Serif({
 
 export const metadata: Metadata = {
   title: "RoboInvest",
+<<<<<<< HEAD
   description: "RoboInvest is a modern trading robot advisor for everyone!",
+=======
+  description: "RoboInvest is a modern trading robot advisor platform for everyone!",
+>>>>>>> 246b033 (implement auth, appwrite, and sentry)
   icons: {
     icon: '/icons/logo.svg'
   }
