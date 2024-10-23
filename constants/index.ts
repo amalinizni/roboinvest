@@ -6,20 +6,52 @@ export const sidebarLinks = [
   },
   {
     imgURL: "/icons/dollar-circle.svg",
-    route: "/my-banks",
-    label: "My Banks",
+    route: "/stock-analysis",
+    label: "Stock Analysis",
   },
   {
     imgURL: "/icons/transaction.svg",
-    route: "/transaction-history",
-    label: "Transaction History",
+    route: "/entry-record",
+    label: "Entry Record",
   },
   {
     imgURL: "/icons/money-send.svg",
-    route: "/payment-transfer",
-    label: "Transfer Funds",
+    route: "/paper-trade",
+    label: "Paper Trade",
   },
 ];
+
+
+export const stocksList = [
+  {
+    $id: "1",
+    stockName: "AAPL", // Apple Inc.
+    closePrice: 150.00,
+    difference: 2.00,
+    differencePercentage: 1.35,
+    accountId: "X7LMJkE5vnskJBxwPeXaUWDBxAyZXwi9DNEWJ",
+    stockId: "apple-stock-id",
+    accessToken: "some-access-token",
+    fundingSourceUrl: "url-to-funding-source",
+    userId: "6627ed3d00267aa6fa3e",
+    sharableId: "some-sharable-id",
+  },
+  {
+    $id: "2",
+    stockName: "TSLA", // Tesla Inc.
+    closePrice: 700.00,
+    difference: -5.00,
+    differencePercentage: -0.71,
+    accountId: "X7LMJkE5vnskJBxwPeXaUWDBxAyZXwi9DNEWJ",
+    stockId: "tesla-stock-id",
+    accessToken: "some-access-token",
+    fundingSourceUrl: "url-to-funding-source",
+    userId: "6627ed3d00267aa6fa3e",
+    sharableId: "some-sharable-id",
+  },
+  // Add more stocks as needed
+];
+
 
 // good_user / good_password - Bank of America
 export const TEST_USER_ID = "6627ed3d00267aa6fa3e";

@@ -62,8 +62,10 @@ declare type Account = {
   sharableId: string;
 };
 
-declare type Transaction = {
+declare type Alarm = {
   id: string;
+  message: string; // Add more properties as required
+  triggered: boolean; // Example property indicating if the alarm has been triggered
   $id: string;
   name: string;
   paymentChannel: string;
@@ -77,14 +79,18 @@ declare type Transaction = {
   type: string;
   $createdAt: string;
   channel: string;
-  senderBankId: string;
-  receiverBankId: string;
+  senderStockId: string;
+  receiverStockId: string;
 };
 
-declare type Bank = {
+declare type Stock = {
   $id: string;
+  stockName: string; // Name of the stock (e.g., TSLA)
+  closePrice: number; // Closing price of the stock
+  difference: number; // Difference in price
+  differencePercentage: number; // Percentage difference
   accountId: string;
-  bankId: string;
+  stockId: string;
   accessToken: string;
   fundingSourceUrl: string;
   userId: string;
@@ -120,7 +126,7 @@ declare type TransferParams = {
 declare type AddFundingSourceParams = {
   dwollaCustomerId: string;
   processorToken: string;
-  bankName: string;
+  stockName: string;
 };
 
 declare type NewDwollaCustomerParams = {
@@ -142,7 +148,7 @@ declare interface CreditCardProps {
   showBalance?: boolean;
 }
 
-declare interface BankInfoProps {
+declare interface StockInfoProps {
   account: Account;
   appwriteItemId?: string;
   type: "full" | "card";
@@ -164,7 +170,7 @@ declare interface PageHeaderProps {
   bottomTitle: string;
   topDescription: string;
   bottomDescription: string;
-  connectBank?: boolean;
+  connectStock?: boolean;
 }
 
 declare interface PaginationProps {
@@ -191,20 +197,20 @@ declare interface AuthFormProps {
   type: "sign-in" | "sign-up";
 }
 
-declare interface BankDropdownProps {
+declare interface StockDropdownProps {
   accounts: Account[];
   setValue?: UseFormSetValue<any>;
   otherStyles?: string;
 }
 
-declare interface BankTabItemProps {
+declare interface StockTabItemProps {
   account: Account;
   appwriteItemId?: string;
 }
 
-declare interface TotlaBalanceBoxProps {
+declare interface TotalBalanceBoxProps {
   accounts: Account[];
-  totalBanks: number;
+  totalStocks: number;
   totalCurrentBalance: number;
 }
 
@@ -214,23 +220,23 @@ declare interface FooterProps {
 
 declare interface RightSidebarProps {
   user: User;
-  transactions: Transaction[];
-  banks: Bank[] & Account[];
+  alarms: Alarms[];
+  stocks: Stock[] & Account[];
 }
 
 declare interface SiderbarProps {
   user: User;
 }
 
-declare interface RecentTransactionsProps {
+declare interface RecentAlarmsProps {
   accounts: Account[];
-  transactions: Transaction[];
+  alarms: Alarm[];
   appwriteItemId: string;
   page: number;
 }
 
-declare interface TransactionHistoryTableProps {
-  transactions: Transaction[];
+declare interface AlarmHistoryTableProps {
+  alarms: Alarm[];
   page: number;
 }
 
@@ -238,8 +244,8 @@ declare interface CategoryBadgeProps {
   category: string;
 }
 
-declare interface TransactionTableProps {
-  transactions: Transaction[];
+declare interface AlarmTableProps {
+  alarms: Alarm[];
 }
 
 declare interface CategoryProps {
@@ -267,7 +273,7 @@ declare interface getInstitutionProps {
   institutionId: string;
 }
 
-declare interface getTransactionsProps {
+declare interface getAlarmsProps {
   accessToken: string;
 }
 
@@ -278,18 +284,18 @@ declare interface CreateFundingSourceOptions {
   _links: object; // Dwolla On Demand Authorization Link
 }
 
-declare interface CreateTransactionProps {
+declare interface CreateAlarmProps {
   name: string;
   amount: string;
   senderId: string;
-  senderBankId: string;
+  senderStockId: string;
   receiverId: string;
-  receiverBankId: string;
+  receiverStockId: string;
   email: string;
 }
 
-declare interface getTransactionsByBankIdProps {
-  bankId: string;
+declare interface getAlarmsByStockIdProps {
+  stockId: string;
 }
 
 declare interface signInProps {
@@ -306,23 +312,23 @@ declare interface exchangePublicTokenProps {
   user: User;
 }
 
-declare interface createBankAccountProps {
+declare interface createStockAccountProps {
   accessToken: string;
   userId: string;
   accountId: string;
-  bankId: string;
+  stockId: string;
   fundingSourceUrl: string;
   sharableId: string;
 }
 
-declare interface getBanksProps {
+declare interface getStocksProps {
   userId: string;
 }
 
-declare interface getBankProps {
+declare interface getStockProps {
   documentId: string;
 }
 
-declare interface getBankByAccountIdProps {
+declare interface getStockByAccountIdProps {
   accountId: string;
 }

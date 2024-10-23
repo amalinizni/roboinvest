@@ -133,7 +133,7 @@
     @apply text-24 lg:text-30 flex-1 font-semibold text-gray-900;
   }
 
-  .recent-transactions {
+  .recent-alarms {
     @apply flex w-full flex-col gap-6;
   }
 
@@ -141,15 +141,15 @@
     @apply text-14 rounded-lg border border-gray-300 px-4 py-2.5 font-semibold text-gray-700;
   }
 
-  .recent-transactions {
+  .recent-alarms {
     @apply flex w-full flex-col gap-6;
   }
 
-  .recent-transactions-label {
+  .recent-alarms-label {
     @apply text-20 md:text-24 font-semibold text-gray-900;
   }
 
-  .recent-transactions-tablist {
+  .recent-alarms-tablist {
     @apply custom-scrollbar mb-8 flex w-full flex-nowrap;
   }
 
@@ -182,29 +182,38 @@
     @apply text-16 font-normal text-gray-600;
   }
 
-  .banks {
+  .stocks {
     @apply flex flex-col justify-between gap-8 px-6 py-8;
   }
 
-  /* My Banks */
-  .my-banks {
+  .stock-item {
+    padding: 10px 0;
+    transition: background-color 0.2s;
+  }
+  
+  .stock-item:hover {
+    background-color: #f9fafb;
+  }
+
+  /* My Stocks */
+  .my-stocks {
     @apply flex h-screen max-h-screen w-full flex-col gap-8 bg-gray-25 p-8 xl:py-12;
   }
 
-  /* My Banks */
-  .transactions {
+  /* My Stocks */
+  .alarms {
     @apply flex max-h-screen w-full flex-col gap-8 overflow-y-scroll bg-gray-25 p-8 xl:py-12;
   }
 
-  .transactions-header {
+  .alarms-header {
     @apply flex w-full flex-col items-start justify-between gap-8 md:flex-row;
   }
 
-  .transactions-account {
+  .alarms-account {
     @apply flex flex-col justify-between gap-4 rounded-lg border-y bg-blue-600 px-4 py-5 md:flex-row;
   }
 
-  .transactions-account-balance {
+  .alarms-account-balance {
     @apply flex-center flex-col  gap-2 rounded-md bg-blue-25/20 px-4 py-2 text-white;
   }
 
